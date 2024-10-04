@@ -67,6 +67,6 @@ mongoose
     "mongodb+srv://tamle27496:Tamle2704@cluster0.dnoog.mongodb.net/post?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then((result) => {
-    app.listen(8080);
+    app.listen(process.env.PORT || 8080);
   })
   .catch((err) => console.log(err));
