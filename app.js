@@ -62,11 +62,13 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 
+const PORT = process.env.PORT || 8080;
+
 mongoose
   .connect(
     "mongodb+srv://tamle27496:Tamle2704@cluster0.dnoog.mongodb.net/post?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then((result) => {
-    app.listen(process.env.PORT || 8080);
+    app.listen(PORT);
   })
   .catch((err) => console.log(err));
